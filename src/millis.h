@@ -2,7 +2,7 @@
  * millis.h
  *
  * Created: 11. 4. 2019 15:19:32
- *  Author: Vojta
+ *  Author: Tekl7
  *
  * This project uses a Timer/Counter (0 or 1) to implement millis() function.
  * millis() function returns time in ms from the program start.

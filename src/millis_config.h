@@ -2,7 +2,7 @@
  * millis_config.h
  *
  * Created: 13. 8. 2019 13:34:17
- *  Author: Vojta
+ *  Author: Tekl7
  *
  * Register configuration for millis library
  */ 
@@ -11,9 +11,11 @@
 #ifndef MILLIS_CONFIG_H_
 #define MILLIS_CONFIG_H_
 
-// Select a number according to the Timer/Counter to be used
-// and assign it to the MILLIS_TC_NUM macro.
-// Timer/Counter0 -> 0, Timer/Counter1 -> 1
+/**
+	Select a number according to the Timer/Counter to be used
+	and assign it to the MILLIS_TC_NUM macro.
+	Timer/Counter0 -> 0, Timer/Counter1 -> 1
+*/
 #define MILLIS_TC_NUM 0
 
 #if defined(__AVR_ATtiny84A__)

@@ -1,8 +1,8 @@
 /*
- * library.c
+ * millis.c
  *
  * Created: 11. 4. 2019 12:45:29
- * Author : Vojta
+ * Author : Tekl7
  */ 
 
 #include <avr/interrupt.h>
@@ -32,7 +32,7 @@ uint32_t millis()
 {
 	uint32_t millis_return;
 
-	// Ensure this cannot be disrupted
+	// Ensures this cannot be disrupted
 	ATOMIC_BLOCK(ATOMIC_FORCEON)
 	{
 		millis_return = timer_millis;
