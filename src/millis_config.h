@@ -11,6 +11,11 @@
 #ifndef MILLIS_CONFIG_H_
 #define MILLIS_CONFIG_H_
 
+#ifndef F_CPU
+	#warning "F_CPU set to default value!"
+	#define F_CPU 8000000UL
+#endif
+
 /**
 	Select a number according to the Timer/Counter to be used
 	and assign it to the MILLIS_TC_NUM macro.
@@ -24,8 +29,8 @@
 #define CTC_BIT_MSK			_BV(WGM01)
 #define PRESCALER_REG		TCCR0B
 #define PRESCALER_BITS_MSK	_BV(CS00) | _BV(CS01)
+#define PRESCALER			64
 #define OCREG				OCR0A
-#define OCREG_VALUE			124
 #define OCIE_REG			TIMSK0
 #define	OCIE_BIT_MSK		_BV(OCIE0A)
 #define OCINT_VECT			TIM0_COMPA_vect
@@ -34,8 +39,8 @@
 #define CTC_BIT_MSK			_BV(WGM12)
 #define PRESCALER_REG		TCCR1B
 #define PRESCALER_BITS_MSK	_BV(CS10)
+#define PRESCALER			1
 #define OCREG				OCR1A
-#define OCREG_VALUE			7999
 #define OCIE_REG			TIMSK1
 #define	OCIE_BIT_MSK		_BV(OCIE1A)
 #define OCINT_VECT			TIM1_COMPA_vect
@@ -48,8 +53,8 @@
 #define CTC_BIT_MSK			_BV(WGM01)
 #define PRESCALER_REG		TCCR0B
 #define PRESCALER_BITS_MSK	_BV(CS00) | _BV(CS01)
+#define PRESCALER			64
 #define OCREG				OCR0A
-#define OCREG_VALUE			124
 #define OCIE_REG			TIMSK
 #define	OCIE_BIT_MSK		_BV(OCIE0A)
 #define OCINT_VECT			TIMER0_COMPA_vect
@@ -58,8 +63,8 @@
 #define CTC_BIT_MSK			_BV(CTC1)
 #define PRESCALER_REG		TCCR1
 #define PRESCALER_BITS_MSK	_BV(CS10) | _BV(CS11) | _BV(CS12)
+#define PRESCALER			64
 #define OCREG				OCR1C
-#define OCREG_VALUE			124
 #define OCIE_REG			TIMSK
 #define	OCIE_BIT_MSK		_BV(OCIE1A)
 #define OCINT_VECT			TIMER1_COMPA_vect
@@ -72,8 +77,8 @@
 #define CTC_BIT_MSK			_BV(CTC0)
 #define PRESCALER_REG		TCCR0A
 #define PRESCALER_BITS_MSK	_BV(CS00) | _BV(CS01)
+#define PRESCALER			64
 #define OCREG				OCR0A
-#define OCREG_VALUE			124
 #define OCIE_REG			TIMSK0
 #define	OCIE_BIT_MSK		_BV(OCIE0A)
 #define OCINT_VECT			TIMER0_COMPA_vect
@@ -82,8 +87,8 @@
 #define CTC_BIT_MSK			_BV(WGM12)
 #define PRESCALER_REG		TCCR1B
 #define PRESCALER_BITS_MSK	_BV(CS10)
+#define PRESCALER			1
 #define OCREG				OCR1A
-#define OCREG_VALUE			7999
 #define OCIE_REG			TIMSK1
 #define	OCIE_BIT_MSK		_BV(OCIE1A)
 #define OCINT_VECT			TIMER1_COMPA_vect

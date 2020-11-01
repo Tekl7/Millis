@@ -22,7 +22,7 @@ void millis_init()
 	PRESCALER_REG |= PRESCALER_BITS_MSK;
 	
 	// Set OCRnx value
-	OCREG = OCREG_VALUE;
+	OCREG = ((F_CPU / PRESCALER) / 1000) - 1;
 	
 	// Enable output compare interrupt
 	OCIE_REG |= OCIE_BIT_MSK;
