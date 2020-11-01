@@ -95,4 +95,28 @@
 #endif
 #endif
 
+#if defined(__AVR_ATmega328P__)
+#if MILLIS_TC_NUM == 0
+#define CTC_REG				TCCR0A
+#define CTC_BIT_MSK			_BV(WGM01)
+#define PRESCALER_REG		TCCR0B
+#define PRESCALER_BITS_MSK	_BV(CS00) | _BV(CS01)
+#define PRESCALER			64
+#define OCREG				OCR0A
+#define OCIE_REG			TIMSK0
+#define	OCIE_BIT_MSK		_BV(OCIE0A)
+#define OCINT_VECT			TIMER0_COMPA_vect
+#elif MILLIS_TC_NUM == 1
+#define CTC_REG				TCCR1B
+#define CTC_BIT_MSK			_BV(WGM12)
+#define PRESCALER_REG		TCCR1B
+#define PRESCALER_BITS_MSK	_BV(CS10)
+#define PRESCALER			1
+#define OCREG				OCR1A
+#define OCIE_REG			TIMSK1
+#define	OCIE_BIT_MSK		_BV(OCIE1A)
+#define OCINT_VECT			TIMER1_COMPA_vect
+#endif
+#endif
+
 #endif /* MILLIS_CONFIG_H_ */

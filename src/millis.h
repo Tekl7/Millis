@@ -8,7 +8,7 @@
  * millis() function returns time in ms from the program start.
  *
  * Hardware support:
- * ATtiny84A, ATtiny85, ATtiny88
+ * ATtiny84A, ATtiny85, ATtiny88, ATmega328P
  * It is possible to add another AVR MCUs, just add another conditional
  * directives (#if defined(__AVR_YOUR_DEVICE__)), assign the right registers
  * and set the right prescaler in millis_config.h file.
